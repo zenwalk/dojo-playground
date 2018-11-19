@@ -1,47 +1,20 @@
-require(['app/main', 'echarts', 'vue'], function(main, echarts, Vue) {
-	console.log(echarts.version);
-	console.log(Vue.version);
+require([ 'react', 'react-dom', 'demo-component', 'antd' ], function(React, ReactDOM, DemoComponent, antd) {
+	var h = React.createElement;
 
-	var chart = echarts.init(document.getElementById('box'));
+	var handleClick = function() {
+		console.log('hello');
+	};
 
-	var option = {
-		title: {
-			text: 'ECharts 入门示例'
-		},
-		tooltip: {},
-		legend: {
-			data: ['销量']
-        },
-		xAxis: {
-			data: []
-		},
-		yAxis: {},
-		series: [
-			{
-				name: '销量',
-				type: 'line',
-			}
-		]
-    };
-    
-    var option2 = {
-        // xAxis: {
-        //     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-        // },
-        series: [
-			{
-				data: [5, 20, 36, 10, 10, 20]
-			}
-		]
-    }
-    chart.setOption(option);
-
-    chart.showLoading({
-        text: '加载中...'
-    });
-    setTimeout(function() {
-        chart.setOption(option2);
-        chart.hideLoading();
-    }, 4000);
-	
+	ReactDOM.render(
+		h('div', {}, [
+			h(antd.Button, { type: 'primary', onClick: handleClick }, '确认'),
+			' ',
+			h(antd.Button, { type: 'error' }, '错误'),
+			' ',
+			h(antd.Button, { type: 'dashed' }, '确认'),
+			' ',
+			h(antd.Button, { type: 'danger' }, '确认')
+		]),
+		document.getElementById('root')
+	);
 });

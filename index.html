@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-    #box {
-    width: 400px;
-    height: 400px;
-    }
+      #box {
+        width: 400px;
+        height: 400px;
+      }
+      #root {
+        width: 70%;
+        margin: 100px auto;
+      }
     </style>
-</head>
-<body>
-    <div id="box"></div>
+    <link rel="stylesheet" href="./demo-component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.10.7/antd.css">
+  </head>
+
+  <body>
+    <!-- <div id="box"></div> -->
+    <div id="root"></div>
 
     <script src="dojoConfig.js"></script>
-    <script src="node_modules/dojo/dojo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dojo/1.10.4/dojo.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
